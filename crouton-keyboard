@@ -89,8 +89,9 @@ xkb_symbols "overlay" {
     key <AE12> { overlay1=<FK12> };
     key <BKSP> { overlay1=<DELE> };
 
-    key <LALT> { overlay1=<CAPS> };
-    key <RALT> { overlay1=<CAPS> };
+    // uncomment the below 2 lines to map search+LALT or RALT to CAPS
+    // key <LALT> { overlay1=<CAPS> };
+    // key <RALT> { overlay1=<CAPS> };
 
     // For some strange reason, some Super_R events are triggered when
     // the Search key is released (i.e. with overlay on).
@@ -99,6 +100,87 @@ xkb_symbols "overlay" {
 
     // Map dummy key to no symbol
     key <I253> { [ NoSymbol ] };
+
+    // For all other "normal" keys (alphanumeric, symbols, but not modifiers
+    // such as Shift, Alt, Ctrl), map Search+key to mod4+key
+    // Because of the way XKB overlays work, we need to bounce off another
+    // keycode (we use I208-253 here)
+    key <ESC> { overlay1= <I208> };
+    key <I208> { actions[Group1]= [ Redirect(keycode=<ESC>, modifiers=mod4) ] };
+    key <BKSL> { overlay1= <I209> };
+    key <I209> { actions[Group1]= [ Redirect(keycode=<BKSL>, modifiers=mod4) ] };
+    key <AB01> { overlay1= <I210> };
+    key <I210> { actions[Group1]= [ Redirect(keycode=<AB01>, modifiers=mod4) ] };
+    key <AB02> { overlay1= <I211> };
+    key <I211> { actions[Group1]= [ Redirect(keycode=<AB02>, modifiers=mod4) ] };
+    key <AB03> { overlay1= <I212> };
+    key <I212> { actions[Group1]= [ Redirect(keycode=<AB03>, modifiers=mod4) ] };
+    key <AB04> { overlay1= <I213> };
+    key <I213> { actions[Group1]= [ Redirect(keycode=<AB04>, modifiers=mod4) ] };
+    key <AB05> { overlay1= <I214> };
+    key <I214> { actions[Group1]= [ Redirect(keycode=<AB05>, modifiers=mod4) ] };
+    key <AB06> { overlay1= <I215> };
+    key <I215> { actions[Group1]= [ Redirect(keycode=<AB06>, modifiers=mod4) ] };
+    key <AB07> { overlay1= <I216> };
+    key <I216> { actions[Group1]= [ Redirect(keycode=<AB07>, modifiers=mod4) ] };
+    key <AB08> { overlay1= <I217> };
+    key <I217> { actions[Group1]= [ Redirect(keycode=<AB08>, modifiers=mod4) ] };
+    key <AB10> { overlay1= <I218> };
+    key <I218> { actions[Group1]= [ Redirect(keycode=<AB10>, modifiers=mod4) ] };
+    key <TAB> { overlay1= <I219> };
+    key <I219> { actions[Group1]= [ Redirect(keycode=<TAB>, modifiers=mod4) ] };
+    key <AD01> { overlay1= <I220> };
+    key <I220> { actions[Group1]= [ Redirect(keycode=<AD01>, modifiers=mod4) ] };
+    key <AD02> { overlay1= <I221> };
+    key <I221> { actions[Group1]= [ Redirect(keycode=<AD02>, modifiers=mod4) ] };
+    key <AD03> { overlay1= <I222> };
+    key <I222> { actions[Group1]= [ Redirect(keycode=<AD03>, modifiers=mod4) ] };
+    key <AD04> { overlay1= <I223> };
+    key <I223> { actions[Group1]= [ Redirect(keycode=<AD04>, modifiers=mod4) ] };
+    key <AD05> { overlay1= <I224> };
+    key <I224> { actions[Group1]= [ Redirect(keycode=<AD05>, modifiers=mod4) ] };
+    key <AD06> { overlay1= <I225> };
+    key <I225> { actions[Group1]= [ Redirect(keycode=<AD06>, modifiers=mod4) ] };
+    key <AD07> { overlay1= <I226> };
+    key <I226> { actions[Group1]= [ Redirect(keycode=<AD07>, modifiers=mod4) ] };
+    key <AD08> { overlay1= <I227> };
+    key <I227> { actions[Group1]= [ Redirect(keycode=<AD08>, modifiers=mod4) ] };
+    key <AD09> { overlay1= <I228> };
+    key <I228> { actions[Group1]= [ Redirect(keycode=<AD09>, modifiers=mod4) ] };
+    key <AD10> { overlay1= <I229> };
+    key <I229> { actions[Group1]= [ Redirect(keycode=<AD10>, modifiers=mod4) ] };
+    key <AD11> { overlay1= <I230> };
+    key <I230> { actions[Group1]= [ Redirect(keycode=<AD11>, modifiers=mod4) ] };
+    key <AD12> { overlay1= <I231> };
+    key <I231> { actions[Group1]= [ Redirect(keycode=<AD12>, modifiers=mod4) ] };
+    key <RTRN> { overlay1= <I234> };
+    key <I234> { actions[Group1]= [ Redirect(keycode=<RTRN>, modifiers=mod4) ] };
+    key <AC01> { overlay1= <I235> };
+    key <I235> { actions[Group1]= [ Redirect(keycode=<AC01>, modifiers=mod4) ] };
+    key <AC02> { overlay1= <I236> };
+    key <I236> { actions[Group1]= [ Redirect(keycode=<AC02>, modifiers=mod4) ] };
+    key <AC03> { overlay1= <I237> };
+    key <I237> { actions[Group1]= [ Redirect(keycode=<AC03>, modifiers=mod4) ] };
+    key <AC04> { overlay1= <I238> };
+    key <I238> { actions[Group1]= [ Redirect(keycode=<AC04>, modifiers=mod4) ] };
+    key <AC05> { overlay1= <I239> };
+    key <I239> { actions[Group1]= [ Redirect(keycode=<AC05>, modifiers=mod4) ] };
+    key <AC06> { overlay1= <I240> };
+    key <I240> { actions[Group1]= [ Redirect(keycode=<AC06>, modifiers=mod4) ] };
+    key <AC07> { overlay1= <I241> };
+    key <I241> { actions[Group1]= [ Redirect(keycode=<AC07>, modifiers=mod4) ] };
+    key <AC08> { overlay1= <I242> };
+    key <I242> { actions[Group1]= [ Redirect(keycode=<AC08>, modifiers=mod4) ] };
+    key <AC09> { overlay1= <I243> };
+    key <I243> { actions[Group1]= [ Redirect(keycode=<AC09>, modifiers=mod4) ] };
+    key <AC10> { overlay1= <I244> };
+    key <I244> { actions[Group1]= [ Redirect(keycode=<AC10>, modifiers=mod4) ] };
+    key <AC11> { overlay1= <I245> };
+    key <I245> { actions[Group1]= [ Redirect(keycode=<AC11>, modifiers=mod4) ] };
+    key <TLDE> { overlay1= <I246> };
+    key <I246> { actions[Group1]= [ Redirect(keycode=<TLDE>, modifiers=mod4) ] };
+    key <LSGT> { overlay1= <I251> };
+    key <I251> { actions[Group1]= [ Redirect(keycode=<LSGT>, modifiers=mod4) ] };
 };
 END
 
