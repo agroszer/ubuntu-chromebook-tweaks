@@ -39,8 +39,9 @@ xkb_symbols "overlay" {
     key <AE12> { overlay1=<FK12> };
     key <BKSP> { overlay1=<DELE> };
 
-    key <LALT> { overlay1=<CAPS> };
-    key <RALT> { overlay1=<CAPS> };
+    // uncomment the below 2 lines to map search+LALT or RALT to CAPS
+    // key <LALT> { overlay1=<CAPS> };
+    // key <RALT> { overlay1=<CAPS> };
 
     // For some strange reason, some Super_R events are triggered when
     // the Search key is released (i.e. with overlay on).
