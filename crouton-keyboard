@@ -61,32 +61,37 @@ xkb_symbols "overlay" {
     key <DOWN> { overlay1=<PGDN> };
 
     key <FK01> { overlay1=<I247> };
-    key <I247> { [ XF86Back ] };
+    key <I247>   {       [ XF86Back              ] };
     key <FK02> { overlay1=<I248> };
-    key <I248> { [ XF86Forward ] };
+    key <I248>   {       [ XF86Forward           ] };
     key <FK03> { overlay1=<I249> };
-    key <I249> { [ XF86Reload ] };
-    key <FK04> { overlay1=<I235> }; // XF86Display
+    key <I249>   {       [ XF86Reload            ] };
+    key <FK04> { overlay1=<I156> }; // XF86Launch1
     key <FK05> { overlay1=<I250> };
-    key <I250> { [ XF86ApplicationRight ] };
+    key <I250>   {       [ XF86ApplicationRight   ] };
     key <FK06> { overlay1=<I232> }; // XF86MonBrightnessDown
     key <FK07> { overlay1=<I233> }; // XF86MonBrightnessUp
     key <FK08> { overlay1=<MUTE> };
     key <FK09> { overlay1=<VOL-> };
     key <FK10> { overlay1=<VOL+> };
 
-    key <AE01> { overlay1=<FK01> };
-    key <AE02> { overlay1=<FK02> };
-    key <AE03> { overlay1=<FK03> };
-    key <AE04> { overlay1=<FK04> };
-    key <AE05> { overlay1=<FK05> };
-    key <AE06> { overlay1=<FK06> };
-    key <AE07> { overlay1=<FK07> };
-    key <AE08> { overlay1=<FK08> };
-    key <AE09> { overlay1=<FK09> };
-    key <AE10> { overlay1=<FK10> };
+    // map search+number keys to F keys
+    // F1-F10 is there by hardware, no need to remap
+    // key <AE01> { overlay1=<FK01> };
+    // key <AE02> { overlay1=<FK02> };
+    // key <AE03> { overlay1=<FK03> };
+    // key <AE04> { overlay1=<FK04> };
+    // key <AE05> { overlay1=<FK05> };
+    // key <AE06> { overlay1=<FK06> };
+    // key <AE07> { overlay1=<FK07> };
+    // key <AE08> { overlay1=<FK08> };
+    // key <AE09> { overlay1=<FK09> };
+    // key <AE10> { overlay1=<FK10> };
+    // F11-F12 are on search+- and search+=
     key <AE11> { overlay1=<FK11> };
     key <AE12> { overlay1=<FK12> };
+
+    // map search+backspace to delete
     key <BKSP> { overlay1=<DELE> };
 
     // uncomment the below 2 lines to map search+LALT or RALT to CAPS
@@ -181,6 +186,29 @@ xkb_symbols "overlay" {
     key <I246> { actions[Group1]= [ Redirect(keycode=<TLDE>, modifiers=mod4) ] };
     key <LSGT> { overlay1= <I251> };
     key <I251> { actions[Group1]= [ Redirect(keycode=<LSGT>, modifiers=mod4) ] };
+
+    // redirect numbers 1-0 too
+    key <AE01> { overlay1= <I252> };
+    key <I252> { actions[Group1]= [ Redirect(keycode=<AE01>, modifiers=mod4) ] };
+    key <AE02> { overlay1= <I253> };
+    key <I253> { actions[Group1]= [ Redirect(keycode=<AE02>, modifiers=mod4) ] };
+    key <AE03> { overlay1= <I254> };
+    key <I254> { actions[Group1]= [ Redirect(keycode=<AE03>, modifiers=mod4) ] };
+    key <AE04> { overlay1= <I255> };
+    key <I255> { actions[Group1]= [ Redirect(keycode=<AE04>, modifiers=mod4) ] };
+    key <AE05> { overlay1= <I256> };
+    key <I256> { actions[Group1]= [ Redirect(keycode=<AE05>, modifiers=mod4) ] };
+    key <AE06> { overlay1= <I257> };
+    key <I257> { actions[Group1]= [ Redirect(keycode=<AE06>, modifiers=mod4) ] };
+    key <AE07> { overlay1= <I258> };
+    key <I258> { actions[Group1]= [ Redirect(keycode=<AE07>, modifiers=mod4) ] };
+    key <AE08> { overlay1= <I259> };
+    key <I259> { actions[Group1]= [ Redirect(keycode=<AE08>, modifiers=mod4) ] };
+    key <AE09> { overlay1= <I260> };
+    key <I260> { actions[Group1]= [ Redirect(keycode=<AE09>, modifiers=mod4) ] };
+    key <AE10> { overlay1= <I261> };
+    key <I261> { actions[Group1]= [ Redirect(keycode=<AE10>, modifiers=mod4) ] };
+
 };
 END
 
